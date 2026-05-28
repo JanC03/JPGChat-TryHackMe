@@ -7,7 +7,7 @@ Difficulty: Easy
 <br />
 Objective: Exploit a poorly coded chatbot to achieve remote code execution and escalate to root.
 <br />
-Real-World Framing: The vulnerabilities demonstrated mirror those commonly introduced by AI-generated code deployed without human review.
+Business Context: The vulnerabilities demonstrated mirror those commonly introduced by AI-generated code deployed without human review.
 <br />
 
 <h2>Executive Summary</h2>
@@ -22,12 +22,11 @@ The combined attack chain enabled full server compromise from an unauthenticated
 
 <h2>What This Means for Your Business</h2>
 
-AI writes functional code. It does not write secure code.
-When a developer uses tools like ChatGPT or Copilot to build a feature quickly, the code often works perfectly—but contains mistakes that a human reviewer would catch. The vulnerability exploited here is a textbook example of what AI assistants consistently get wrong.
+AI writes functional code, but it does not write secure code.
+When a developer uses tools like ChatGPT or Copilot to build a feature quickly, the code often works perfectly, but contains mistakes that a human reviewer would catch. The vulnerability exploited here is a textbook example of what AI assistants consistently get wrong.
 <br />
 <br />
-Every internet-facing service is a front door.
-This was just a chatbot. It wasn't the payment system or the admin panel. But any service accessible from the internet is an attack surface. A single vulnerable feature on your website can be the entry point for a full compromise.
+This was just a chatbot I exploited, not the payment system or the admin panel. Any service accessible from the internet is an attack surface, meaning a single vulnerable feature on your website can be the entry point for a full compromise.
 <br />
 <br />
 One small mistake can give an attacker everything.
