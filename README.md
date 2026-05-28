@@ -1,6 +1,7 @@
 <h1>Penetration Test Write-Up: JPChat (TryHackMe)</h1>
 
 <h2>Description</h2>
+
 Room: JPChat (TryHackMe)
 <br />
 Difficulty: Easy
@@ -36,10 +37,10 @@ The initial vulnerability gave us a restricted shell on the server. A second, co
 You don't need to be a target to be a victim.
 Automated bots scan the internet constantly, looking for exactly these vulnerabilities. Nobody specifically targeted this system. A generic exploit worked against a generic mistake. If your business has a website, it is being scanned right now.
 
-<h2>Technical walk-through:</h2>
+<h2>Technical Walkthrough:</h2>
 <p align="center">
 
- <h3>Enumeration</h3>
+<h3>Enumeration</h3>
  
 I started off with an nmap scan on the target IP address, which revealed 2 open ports:
  <br/>
