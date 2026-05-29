@@ -1,22 +1,22 @@
-<h1>Penetration Test Write-Up: JPChat (TryHackMe)</h1>
+<h1>Penetration Test Write-Up: JPGChat (TryHackMe)</h1>
 
 <h2>Description</h2>
 
-Room: JPChat (TryHackMe)
+Target: JPGChat (TryHackMe)
 <br />
 Difficulty: Easy
 <br />
 Objective: Exploit a poorly coded chatbot to achieve remote code execution and escalate to root.
 <br />
-Business Context: The vulnerabilities demonstrated mirror those commonly introduced by AI-generated code deployed without human review.
+Business Context: The vulnerabilities demonstrated mirror those commonly introduced by AI-generated code.
 <br />
 
 <h2>Executive Summary</h2>
 
-A simulated customer service chatbot—representative of the type increasingly built using AI code generation tools—was assessed for security vulnerabilities. Two critical findings were identified.
+A simulated customer service chatbot was assessed for security vulnerabilities. Two critical findings were identified.
 <br />
 <br />
-First, the chatbot's report function contained an OS command injection flaw that allowed unauthenticated remote code execution. This granted an attacker a foothold on the server without needing any credentials. Second, a misconfigured sudo permission allowed a low-privileged user to escalate to root by hijacking a Python library import.
+First, the chatbot's report function contained an OS command injection flaw that allowed unauthenticated remote code execution. This granted me a foothold on the server without needing any credentials. Second, a misconfigured sudo permission allowed a low-privileged user to escalate to root by hijacking a Python library import.
 <br />
 <br />
 The combined attack chain enabled full server compromise from an unauthenticated starting point. If this were a production system, an attacker could access all customer data, modify or deface the website, install malware, or use the server to attack other businesses.
@@ -24,16 +24,18 @@ The combined attack chain enabled full server compromise from an unauthenticated
 <h2>What This Means for Your Business</h2>
 
 AI writes functional code, but it does not write secure code.
-When a developer uses tools like ChatGPT or Copilot to build a feature quickly, the code often works perfectly, but contains mistakes that a human reviewer would catch. The vulnerability exploited here is a textbook example of what AI assistants consistently get wrong.
+When a developer uses tools like ChatGPT or Copilot to build a feature, the code often works perfectly, but contains mistakes that a Programmer would catch. The vulnerability exploited here is a textbook example of what AI assistants consistently get wrong.
 <br />
 <br />
-This was just a chatbot I exploited, not the payment system or the admin panel. Any service accessible from the internet is an attack surface, meaning a single vulnerable feature on your website can be the entry point for a full compromise.
+Despite only exploiting the chatbot, any service accessible from the internet is an attack surface, meaning a single vulnerable feature on your website can be the entry point for a full compromise.
 <br />
 <br />
 One small mistake can give an attacker everything.
 The initial vulnerability gave us a restricted shell on the server. A second, completely unrelated misconfiguration let us become the system administrator. Attackers chain small weaknesses together. Defence in depth is the only real protection.
 <br />
 <br />
+You don't need to be a target to be a victim. Automated bots scan the internet 24/7 for vulnerabilities to exploit. If your business has a website, think again before trusting AI to write your code.
+
 You don't need to be a target to be a victim.
 Automated bots scan the internet constantly, looking for exactly these vulnerabilities. Nobody specifically targeted this system. A generic exploit worked against a generic mistake. If your business has a website, it is being scanned right now.
 
@@ -168,4 +170,4 @@ From running the following command we're given root access, meaning we can now t
 
 <h2>Disclaimer</h2>
 
-This penetration test was performed against a deliberately vulnerable training environment (TryHackMe, JPChat room). All findings and exploitation were conducted in a controlled, authorised setting. No real systems were targeted, and no unauthorised access was attempted. The real-world framing is for educational and portfolio demonstration purposes only.
+This penetration test was performed against a deliberately vulnerable training environment (TryHackMe, JPGChat room). All findings and exploitation were conducted in a controlled, authorised setting. No real systems were targeted, and no unauthorised access was attempted. The real-world framing is for educational and portfolio demonstration purposes only.
